@@ -63,6 +63,7 @@ public class HttpServerResource implements BeforeEachCallback, AfterEachCallback
         LOG.debug("Starting up test server");
 
         final ServerBootstrap bootstrap = ServerBootstrap.bootstrap()
+                .setCanonicalHostName("localhost")
                 .setSslContext(scheme == URIScheme.HTTPS ? SSLTestContexts.createServerSSLContext() : null)
                 .setExceptionListener(LoggingExceptionListener.INSTANCE)
                 .setStreamListener(LoggingHttp1StreamListener.INSTANCE);

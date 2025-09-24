@@ -62,6 +62,7 @@ public class HttpAsyncServerResource implements BeforeEachCallback, AfterEachCal
         LOG.debug("Starting up test server");
 
         final AsyncServerBootstrap bootstrap = AsyncServerBootstrap.bootstrap()
+                .setCanonicalHostName("localhost")
                 .setTlsStrategy(new BasicServerTlsStrategy(SSLTestContexts.createServerSSLContext()))
                 .setStreamListener(LoggingHttp1StreamListener.INSTANCE_SERVER)
                 .setIOSessionDecorator(LoggingIOSessionDecorator.INSTANCE)

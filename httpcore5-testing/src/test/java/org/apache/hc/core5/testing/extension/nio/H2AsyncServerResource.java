@@ -63,6 +63,7 @@ public class H2AsyncServerResource implements BeforeEachCallback, AfterEachCallb
         LOG.debug("Starting up test server");
 
         final H2ServerBootstrap bootstrap = H2ServerBootstrap.bootstrap()
+                .setCanonicalHostName("localhost")
                 .setTlsStrategy(new H2ServerTlsStrategy(SSLTestContexts.createServerSSLContext()))
                 .setStreamListener(LoggingHttp1StreamListener.INSTANCE_SERVER)
                 .setStreamListener(LoggingH2StreamListener.INSTANCE)
