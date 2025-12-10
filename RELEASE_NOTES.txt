@@ -23,6 +23,7 @@ Notable changes and features included in the 5.4 series:
 
 * QUERY method support.
 
+* Improved idle connection validation in the async transport.
 
 
 Change Log
